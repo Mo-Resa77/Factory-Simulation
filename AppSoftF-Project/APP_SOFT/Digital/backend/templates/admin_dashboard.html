@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/logo.png') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/admin_dashboard.css') }}"> 
+</head>
+<body>
+  <div class="background-overlay"></div>
+
+  <header>
+    <nav>
+      <div class="logo">
+        <img src="{{ url_for('static', filename='images/image 1.png') }}" alt="Factory Logo">
+      </div>
+      <div class="navbar" id="navbar">
+        <ul>
+          <li><a href="{{ url_for('admin_dashboard') }}">Machines</a></li>
+          <li><a href="#activity-logs-section">Logs</a></li>
+        </ul>
+      </div>
+      <div class="navbar-right" id="navbarRight">
+        <img src="{{ url_for('static', filename='images/Vector.png') }}" alt="Search Icon">
+        <a href="{{ url_for('index') }}">Logout</a>
+      </div>
+      <div class="menu" id="menu"></div> 
+    </nav>
+
+    <div class="hero">
+      <h1>Factory Floor Simulation: Admin Dashboard</h1>
+    </div>
+  </header>
+
+  <section class="search">
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="Search by machine, operator or issue">
+      <button class="search-btn" id="search-btn">
+        <img src="{{ url_for('static', filename='images/Vector 9.png') }}" alt="Search Icon"> 
+      </button>
+    </div>
+    <div class="selection">
+      <div class="filter">
+        <label for="filter">Filter by status</label>
+        <select id="filter">
+          <option value="all">All</option>
+          <option value="running">Running</option>
+          <option value="down">Down</option>
+          <option value="maintenance">Maintenance</option>
+        </select>
+      </div>
+      <div class="sort">
+        <label for="sort">Sort by</label>
+        <select id="sort">
+          <option value="name">Machine Name</option>
+          <option value="status">Status</option>
+          <option value="last_maintenance">Last Maintenance</option>
+        </select>
+      </div>
+    </div>
+  </section>
+  
+  <section class="admin-actions">
+      <button id="add-machine-btn">Add New Machine</button>
+      <button id="add-operator-btn">Add New Operator</button>
+      <button id="run-simulation-btn">Run Simulation</button>
+  </section>
+
+  <div class="main-content-container">
+    <section class="hero-images" id="machine-list">
+    </section>
+  </div>
+
+  <section class="travel-stories" id="activity-logs-section">
+      <div class="plan-container">
+          <div class="plan-contain">
+              <h2>System-Wide Activity Feed</h2>
+              <p>A history of all logs from all operators.</p>
+          </div>
+      </div>
+      <div class="stories" id="admin-log-list">
+          </div>
+  </section>
+
+  <footer>
+    <img src="{{ url_for('static', filename='images/image 1.png') }}" alt="">
+    <p>&copy; 2023 Factory Simulation. All rights reserved.</p>
+  </footer>
+
+  <div id="add-machine-modal" class="modal">
+      <div class="modal-content">
+          <span class="close-btn">&times;</span>
+          <h2>Add New Machine</h2>
+          <form id="add-machine-form">
+              <label for="machine-name">Machine Name</label>
+              <input type="text" id="machine-name" name="name" required>
+              <div class="form-actions">
+                  <button type="submit">Add Machine</button>
+                  <button type="button" class="cancel-btn">Cancel</button>
+              </div>
+          </form>
+      </div>
+  </div>
+
+  <div id="add-operator-modal" class="modal">
+      <div class="modal-content">
+          <span class="close-btn">&times;</span>
+          <h2>Add New Operator</h2>
+          <form id="add-operator-form">
+              <label for="operator-username">Username</label>
+              <input type="text" id="operator-username" name="username" required>
+              <label for="operator-email">Email</label>
+              <input type="email" id="operator-email" name="email" required>
+              <label for="operator-password">Password</label>
+              <input type="password" id="operator-password" name="password" required>
+              <div class="form-actions">
+                  <button type="submit">Add Operator</button>
+                  <button type="button" class="cancel-btn">Cancel</button>
+              </div>
+          </form>
+      </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='scripts/admin_dashboard.js') }}"></script>
+</body>
+</html>

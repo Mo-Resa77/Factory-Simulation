@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Factory Account</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/logo.png') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/sign up.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="image">
+            <img src="{{ url_for('static', filename='images/teartwo.jpg') }}" alt="Factory Background">
+        </div>
+        <div class="content">
+            <div class="top">
+                <div class="first">
+                    <h2>Hi, Get Started Now</h2>
+                    <img src="{{ url_for('static', filename='images/emoji.png') }}" alt="Greeting Emoji">
+                </div>
+                <p>Enter details to create your Factory Simulation account</p>
+            </div>
+            <div class="mid">
+                <div class="separator">
+                    <hr> <span>or</span> <hr>
+                </div>
+            </div>
+            <form id="signup-form">
+                <input type="text" class="custom-input" placeholder="Full Name" required>
+                <input type="email" class="custom-input" placeholder="Email Address" required>
+                <div class="password-input">
+                    <input type="password" class="custom-input" placeholder="Password" required>
+                    <img src="{{ url_for('static', filename='images/show.png') }}" alt="Show Password">
+                </div>
+                <div class="bottom">
+                    <button type="submit">Sign Up</button>
+                </div>
+            </form>
+            <p class="signin-text">Already have an account? <a href="{{ url_for('login_page') }}">Sign in to account</a></p>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='scripts/sign up.js') }}"></script>
+</body>
+</html>

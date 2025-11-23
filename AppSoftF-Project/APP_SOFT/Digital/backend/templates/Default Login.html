@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factory Simulation Login</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/logo.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/Default Login.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="image">
+            <img src="{{ url_for('static', filename='images/ters.jpg') }}" alt="Factory Background">
+        </div>
+      
+
+        <div class="content">
+            <div class="top">
+                <div class="first">
+                    <h2 id="welcome-message">Welcome Back, <span id="user-name"></span></h2>
+                    <img src="{{ url_for('static', filename='images/emoji.png') }}" alt="Greeting Emoji">
+                </div>
+                <p>Enter your login details</p>
+            </div>
+            <div class="mid">
+                <div class="separator">
+                    <hr> <span>or</span> <hr>
+                </div>
+            </div>
+            <form id="login-form">
+                <input type="text" class="custom-input" placeholder="Username or Email" required>
+                <div class="password-input">
+                    <input type="password" class="custom-input" placeholder="Password" id="password-field" required>
+                    <img src="{{ url_for('static', filename='images/show.png') }}" alt="Show Password" id="toggle-password">
+                </div>
+                <div class="options">
+                    <label class="remember-me">
+                        <input type="checkbox">
+                        <span>Remember me</span>
+                    </label>
+                    <a href="#">Forget Password?</a>
+                </div>
+            </form>
+            <div class="bottom">
+                <button id="login-btn">Log In</button>
+                <p class="signin-text">Don’t have an account yet? <a href="{{ url_for('signup_page') }}">Create account</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='scripts/Default Login.js') }}"></script>
+</body>
+</html>

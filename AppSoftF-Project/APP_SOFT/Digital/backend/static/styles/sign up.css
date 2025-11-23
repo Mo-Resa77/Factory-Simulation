@@ -1,0 +1,304 @@
+/* General body styling for centering the entire container */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Main container for the login/signup form */
+.container {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Image container */
+.image {
+    flex: 1;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Logo positioning */
+.logo {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    z-index: 10;
+}
+
+.logo img {
+    width: 80px;
+    height: auto;
+}
+
+/* Content block with the form */
+.content {
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.content .top {
+    margin-bottom: 30px;
+}
+
+.content .top .first {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 5px;
+}
+
+.first h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1e3a8a;
+}
+
+.first img {
+    width: 40px;
+    height: 40px;
+}
+
+.top p {
+    font-size: 1.1rem;
+    color: #6b7280;
+    margin-top: 0;
+}
+
+.separator {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.separator hr {
+    flex: 1;
+    border: none;
+    border-top: 1px solid #e5e7eb;
+}
+
+.separator span {
+    margin: 0 15px;
+    font-size: 0.9rem;
+    color: #9ca3af;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+form input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #f9fafb;
+    transition: all 0.3s ease;
+}
+
+form input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+.password-input {
+    position: relative;
+    width: 100%;
+}
+
+.password-input img {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 20px;
+    height: auto;
+}
+
+/* Button and text styling */
+.bottom {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto 0;
+}
+
+.bottom button {
+    width: 100%;
+    padding: 15px;
+    background-color: #1e3a8a;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.bottom button:hover {
+    background-color: #1e40af;
+}
+
+.signin-text {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+.signin-text a {
+    color: #1e40af;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.signin-text a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        box-shadow: none;
+    }
+
+    .image {
+        display: none;
+    }
+
+    .content {
+        padding: 30px 15px;
+    }
+
+    .logo {
+        position: static;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .first h2 {
+        font-size: 2rem;
+    }
+
+    form, .bottom {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+/* These media queries for tablets seem redundant and could cause issues */
+@media (min-width: 768px) and (max-width: 1024px) {
+    body {
+        overflow: hidden;
+    }
+    
+    .logo img {
+        width: 70%;  
+        height: auto;
+    }
+    
+    .image img {
+        width: 50%;  
+    }
+
+    .content {
+        width: 40%;
+        top: -360px;
+        left: 53%;
+    }
+
+    .first h2 {
+        font-size: 25px;  
+    }
+    .first img {
+        width: 34.93px;
+        height: 36px;
+        margin-top: 15px;
+    }
+    
+    .top p {
+        font-size: 16px;
+    }
+
+    .google-btn {
+        width: 100%;
+        height: 60px;
+        font-size: 18px;
+    }
+    .google-btn img {
+        width: 19px;
+        height:19px;
+    }
+
+    .separator {
+        width: 100%;
+        margin-top: 15px;
+        margin-bottom: 35px;
+    }
+
+    form input {
+        width: 100%;
+        height: 35px; 
+        font-size: 18px;
+    }
+
+    .password-input img {
+        left: 92%;
+    }
+    .remember-me input {
+        width: 18px;
+        height: 18px;
+    }
+    .remember-me span {
+        font-size: 16px;
+    }
+    .options a {
+        font-size: 15px;
+    }
+    .bottom {
+        margin-top: 60px;
+    }
+
+    .bottom button {
+        width: 100%;
+        height: 55px;
+        font-size: 20px;
+    }
+
+    .signin-text {
+        font-size: 15px;
+    }
+}
